@@ -32,6 +32,20 @@ My Work Proposal for the Research Methodology Subject that i did my university c
 
 </div>
 
+## Table of Contents
+- [Research-Methodology. ](#research-methodology-)
+- [CAP Theorem in Distributed Systems: A Systematic Review of Principles.](#cap-theorem-in-distributed-systems-a-systematic-review-of-principles)
+	- [Table of Contents](#table-of-contents)
+	- [Abstract](#abstract)
+	- [Literature Review](#literature-review)
+		- [Theoretical Foundation](#theoretical-foundation)
+		- [Related Works](#related-works)
+	- [Work Proposal](#work-proposal)
+		- [Proposal](#proposal)
+		- [Methodology](#methodology)
+		- [Expected Results and Contributions](#expected-results-and-contributions)
+
+
 ## Abstract
 This paper proposes a systematic review of the CAP theorem in distributed systems, offering an updated view of recent advances and future trends related to CAP.
 
