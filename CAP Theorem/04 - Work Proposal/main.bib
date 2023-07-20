@@ -1,0 +1,252 @@
+%%%% REFERÊNCIAS
+%%
+%% Conjunto padronizado de elementos descritivos retirados de um documento, que permite sua identificação individual.
+%%
+%% Cada entrada no arquivo BibTeX segue um formato padrão. Este formato muda ligeiramente baseado no tipo de entrada, mas a sintaxe
+%% continua a mesma.
+%%
+%% O rótulo de cada entrada não pode conter caracteres especiais, acentuados ou cedilha.
+%%
+%% A formatação do texto no campo "AUTHOR" deve obedecer algumas regras:
+%%   - Acento agudo:        "á = {\'a}".
+%%   - Acento crase:        "à = {\`a}".
+%%   - Acento til:          "ã = {\~a}".
+%%   - Acento circunflexo:  "ê = {\^e}".
+%%   - Acento trema:        "ü = {\"u}".
+%%   - Acento na letra i:   "í = {\'\i}".
+%%   - Cedilha:             "ç = {\c{c}}".
+%%   - Sobrenome composto:  "Santos, Filho, Jos{\'e} C. S.; da Silva, Erivanildo Lopes".
+%%   - Nome de organização: "{\mbox IONA Technologies PLC}".
+%%
+%% A formatação do texto no campo "TITLE" deve obedecer algumas regras (também válidas para o texto no campo "AUTHOR"):
+%%   - MAIÚSCULAS: "REAL = {REAL}".
+%%   - Minúsculas: "real = {real}".
+%%   - CamelCase:  "Real = {R}eal".
+
+%% TIPOS DE ENTRADA
+%%
+%% Ao inserir uma referência no banco de dados, a primeira coisa a decidir é o tipo de entrada. Existem vários tipos de entrada, mas
+%% não são completas, porém são suficientes para o BibTeX fornecer entradas para lidar com praticamente qualquer tipo de referência
+%% razoavelmente bem.
+
+%% ARTICLE - Um artigo de um jornal ou revista.
+%%   - Campos requeridos: AUTHOR, TITLE, JOURNAL e YEAR.
+%%   - Campos opcionais: VOLUME, NUMBER, PAGES, MONTH e NOTE.
+
+%% BOOK - Um livro com uma editora explícita.
+%%   - Campos requeridos: AUTHOR ou EDITOR, TITLE, PUBLISHER e YEAR.
+%%   - Campos opcionais: VOLUME ou NUMBER, SERIES, ADDRESS, EDITION, MONTH e NOTE.
+
+%% BOOKLET - Uma obra impressa mas sem uma editora ou instituição patrocinadora.
+%%   - Campos requeridos: TITLE.
+%%   - Campos opcionais: AUTHOR, HOWPUBLISHED, ADDRESS, MONTH, YEAR e NOTE.
+
+%% CONFERENCE - O mesmo que "INPROCEEDINGS", incluído para compatibilidade de escrita.
+%%   - Campos requeridos: AUTHOR, TITLE, BOOKTITLE e YEAR.
+%%   - Campos opcionais: EDITOR, VOLUME ou NUMBER, SERIES, PAGES, ADDRESS, MONTH, ORGANIZATION, PUBLISHER e NOTE.
+
+%% INBOOK - Uma parte de um livro, que pode ser um capítulo e/ou um intervalo de páginas.
+%%   - Campos requeridos: AUTHOR ou EDITOR, TITLE, CHAPTER ou PAGES, PUBLISHER e YEAR.
+%%   - Campos opcionais: VOLUME ou NUMBER, SERIES, TYPE, ADDRESS, EDITION, MONTH, NOTE.
+
+%% INCOLLECTION - Uma parte de um livro com o seu próprio título.
+%%   - Campos requeridos: AUTHOR, TITLE, BOOKTITLE, PUBLISHER e YEAR.
+%%   - Campos opcionais: EDITOR, VOLUME OR NUMBER, SERIES, TYPE, CHAPTER, PAGES, ADDRESS, EDITION, MONTH e NOTE.
+
+%% INPROCEEDINGS - Um artigo nos anais de uma conferência.
+%%   - Campos requeridos: AUTHOR, TITLE, BOOKTITLE e YEAR.
+%%   - Campos opcionais: EDITOR, VOLUME ou NUMBER, SERIES, PAGES, ADDRESS, MONTH, ORGANIZATION, PUBLISHER e NOTE.
+
+%% MANUAL - Uma documentação técnica.
+%%   - Campos requeridos: TITLE.
+%%   - Campos opcionais: AUTHOR, ORGANIZATION, ADDRESS, EDITION, MONTH, YEAR e NOTE.
+
+%% MASTERSTHESIS - Uma dissertação de mestrado.
+%%   - Campos requeridos: AUTHOR, TITLE, SCHOOL e YEAR.
+%%   - Campos opcionais: TYPE, ADDRESS, MONTH e NOTE.
+
+%% PHDTHESIS - Uma tese de doutorado.
+%%   - Campos requeridos: AUTHOR, TITLE, SCHOOL e YEAR.
+%%   - Campos opcionais: TYPE, ADDRESS, MONTH e NOTE.
+
+%% PROCEEDINGS - As deliberações de uma conferência.
+%%   - Campos requeridos: TITLE e YEAR.
+%%   - Campos opcionais: EDITOR, VOLUME ou NUMBER, SERIES, ADDRESS, MONTH, ORGANIZATION, PUBLISHER e NOTE.
+
+%% TECHREPORT - Um relatório publicado por uma escola ou uma outra instituição, geralmente dentro de uma série numerada.
+%%   - Campos requeridos: AUTHOR, TITLE, INSTITUTION e YEAR.
+%%   - Campos opcionais: TYPE, NUMBER, ADDRESS, MONTH e NOTE.
+
+%% UNPUBLISHED - Um documento com um autor e um título, mas não publicado formalmente.
+%%   - Campos requeridos: AUTHOR, TITLE e NOTE.
+%%   - Campos opcionais: MONTH e YEAR.
+
+%% MISC - Use esse tipo quando nada mais se encaixa.
+%%   - Campos requeridos: "NENHUM".
+%%   - Campos opcionais: AUTHOR, TITLE, HOWPUBLISHED, MONTH, YEAR e NOTE.
+
+%% CAMPOS
+%%
+%% Os tipos de entradas bibliográficas contém alguns subconjuntos padrões de entradas de dados:
+%%   - ADDRESS: Endereço da editora (normalmente, apenas a cidade, mas pode ser o endereço completo para editoras menos conhecidas).
+%%   - ANNOTE: Uma anotação para estilos bibliográficos adotados (não típico).
+%%   - AUTHOR: O(s) nome(s) do(s) autor(es) (no caso de haver mais de um autor, separá-los por "and").
+%%   - BOOKTITLE: O título do livro, mesmo que apenas parte dele esteja sendo citado.
+%%   - CHAPTER: O número do capítulo.
+%%   - CROSSREF: A chave de entrada da referência cruzada.
+%%   - EDITION: A edição de um livro, forma longa (como o "primeiro" ou "segundo").
+%%   - EDITOR: O(s) nome(s) do(s) editor(es).
+%%   - EPRINT: A especificação de uma publicação eletrônica, muitas vezes um "preprint" ou um relatório técnico.
+%%   - HOWPUBLISHED: Como ele foi publicado, se o método de publicação não é típico.
+%%   - INSTITUTION: A instituição que esteve envolvida na publicação, mas não é necessariamente a editora.
+%%   - JOURNAL: O jornal ou a revista onde o trabalho foi publicado.
+%%   - KEY: Um campo oculto utilizado para especificar ou colocar em ordem alfabética as entradas (quando o campos "autor" e
+%%     "editor" estão em falta). Note que isto é muito diferente da chave (mencionados apenas após esta lista) que é usado para
+%%     citar ou fazer uma referência cruzada à entrada.
+%%   - MONTH: O mês de publicação (ou, se não publicado, no mês de criação).
+%%   - NOTE: Diversas informações extras.
+%%   - NUMBER: O "número" de um jornal, uma revista, ou um relatório técnico, se aplicável. (A maioria das publicações tem um campo
+%%     "volume", mas não o campo "número").
+%%   - ORGANIZATION: A organização patrocinadora.
+%%   - PAGES: números de página, separados por vírgulas ou hifens duplo. Para os livros, o número total de páginas.
+%%   - PUBLISHER: O nome da editora.
+%%   - SCHOOL: A escola onde a tese ou dissertação foi escrita.
+%%   - SERIES: A série de livros onde foi publicado em (por exemplo: "A Hardy Boys" ou "Lecture Notes in Computer Science").
+%%   - TITLE: o título do trabalho.
+%%   - TYPE: O tipo de relatório técnico, por exemplo, "Nota de Investigação".
+%%   - URL: O endereço da web.
+%%   - VOLUME: O volume de uma revista ou de um livro com vários volumes.
+%%   - YEAR: O ano de publicação (ou, se não publicado, o ano de criação).
+%%
+%% Além disto, cada entrada contém uma chave (rótulo) que é usada para citar ou uma entrada de referência cruzada. Esta chave é o
+%% primeiro item em uma entrada BibTeX, e não faz parte de qualquer domínio.
+
+@proceedings{SymposiumPrinciplesOfDistributedComputingCAPTheorem2000,
+title = {PODC '00: Proceedings of the Nineteenth Annual ACM Symposium on Principles of Distributed Computing},
+year = {2000},
+isbn = {1581131836},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+location = {Portland, Oregon, USA}
+}
+
+@Inbook{BrewerCAPTheoremSimonSalome,
+author="Salom{\'e}, Simon",
+title="Brewer’s CAP Theorem",
+year="2012",
+url="https://edisciplinas.usp.br/pluginfile.php/2541318/mod_resource/content/1/TeoremaDeBrewer.pdf"
+}
+
+@ARTICLE{TwentyYearsLaterEricBrewer2012,
+  author={Brewer, Eric},
+  journal={Computer}, 
+  title={CAP twelve years later: How the "rules" have changed}, 
+  year={2012},
+  volume={45},
+  number={2},
+  pages={23-29},
+  abstract={The CAP theorem asserts that any networked shared-data system can have only two of three desirable properties. However, by explicitly handling partitions, designers can optimize consistency and availability, thereby achieving some trade-off of all three. The featured Web extra is a podcast from Software Engineering Radio, in which the host interviews Dwight Merriman about the emerging NoSQL movement, the three types of nonrelational data stores, Brewer's CAP theorem, and much more.},
+  keywords={},
+  doi={10.1109/MC.2012.37},
+  ISSN={1558-0814},
+  month={Feb},
+  }
+
+@ARTICLE{PerspectivesCAPTheoremGilbertLynch2012,
+  author={Gilbert, Seth and Lynch, Nancy},
+  journal={Computer}, 
+  title={Perspectives on the CAP Theorem}, 
+  year={2012},
+  volume={45},
+  number={2},
+  pages={30-36},
+  doi={10.1109/MC.2011.389}
+}
+
+@article{Brewer'sConjectureAndTheFeasibilityOfConsistentAvailablePartition-TolerantWebServicesGilbertLynch2002,
+author = {Gilbert, Seth and Lynch, Nancy},
+year = {2002},
+month = {11},
+pages = {},
+title = {Brewer's Conjecture and the Feasibility of Consistent Available Partition-Tolerant Web Services},
+volume = {33},
+journal = {ACM SIGACT News},
+doi = {10.1145/564585.564601}
+}
+
+@misc{YouCantSacrificePartitionToleranceCodaHale2010,
+  title = "You Can't Sacrifice Partition Tolerance",
+  author = "Coda Hale",
+  year = "2010",
+  howpublished = "Blog post",
+  url = "https://codahale.com/you-cant-sacrifice-partition-tolerance/"
+}
+
+@ARTICLE{PACELCTheoremDanielAbadi2012,
+  author={Abadi, Daniel},
+  journal={Computer}, 
+  title={Consistency Tradeoffs in Modern Distributed Database System Design: CAP is Only Part of the Story}, 
+  year={2012},
+  volume={45},
+  number={2},
+  pages={37-42},
+  doi={10.1109/MC.2012.33}
+}
+
+@misc{ProblemsWithCAPMichaelStonebraker2010,
+title = "Problems with CAP and Yahoo's little known NoSQL system",
+author = "Stonebraker, Michael",
+year = "2010",
+howpublished = "Blog post",
+url = "http://dbmsmusings.blogspot.com/2010/04/problems-with-cap-and-yahoos-little.html"
+}
+
+@article{EventuallyConsistentWernerVogels2009,
+author = {Vogels, Werner},
+title = {Eventually Consistent},
+year = {2009},
+issue_date = {January 2009},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+volume = {52},
+number = {1},
+issn = {0001-0782},
+url = {https://doi.org/10.1145/1435417.1435432},
+doi = {10.1145/1435417.1435432},
+abstract = {Building reliable distributed systems at a worldwide scale demands trade-offs between consistency and availability.},
+journal = {Commun. ACM},
+month = {jan},
+pages = {40–44},
+numpages = {5}
+}
+
+@misc{ConsistencyInACIDAndCAPTheoremStackOverFlow2013,
+  title = "Consistency in ACID and CAP Theorem: Are they the same?",
+  author = "Stack Overflow",
+  year = "2013",
+  howpublished = "Stack Exchange post",
+  url = "https://dba.stackexchange.com/questions/31260/consistency-in-acid-and-cap-theorem-are-they-the-same"
+}
+
+@article{PaxosMadeSimpleLamport2001,
+author = {Lamport, Leslie},
+title = {Paxos Made Simple},
+year = {2001},
+month = {December},
+abstract = {At the PODC 2001 conference, I got tired of everyone saying how difficult it was to understand the Paxos algorithm, published in [122]. Although people got so hung up in the pseudo-Greek names that they found the paper hard to understand, the algorithm itself is very simple. So, I cornered a couple of people at the conference and explained the algorithm to them orally, with no paper. When I got home, I wrote down the explanation as a short note, which I later revised based on comments from Fred Schneider and Butler Lampson. The current version is 13 pages long, and contains no formula more complicated than n1 > n2.},
+url = {https://www.microsoft.com/en-us/research/publication/paxos-made-simple/},
+pages = {51-58},
+journal = {ACM SIGACT News (Distributed Computing Column) 32, 4 (Whole Number 121, December 2001)},
+edition = {ACM SIGACT News (Distributed Computing Column) 32, 4 (Whole Number 121, December 2001)},
+}
+
+@book{DistributedSystemsCoulouris2013,
+  title={Sistemas Distribu{\'\i}dos},
+  subtitle={conceitos e projeto},
+  author={Coulouris, George and Dollimore, Jean and Kindberg, Tim and Blair, Gordon},
+  isbn={9788582600542},
+  url={https://books.google.com.br/books?id=6WU3AgAAQBAJ},
+  year={2013},
+  publisher={Bookman Editora},
+  URLACCESSDATE = {21 ago. 2013}
+}

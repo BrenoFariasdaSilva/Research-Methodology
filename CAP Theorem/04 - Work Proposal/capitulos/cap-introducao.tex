@@ -1,0 +1,29 @@
+%%%% CAPÍTULO 1 - INTRODUÇÃO
+%%
+%% Deve apresentar uma visão global da pesquisa, incluindo: breve histórico, importância e justificativa da escolha do tema,
+%% delimitações do assunto, formulação de hipóteses e objetivos da pesquisa e estrutura do trabalho.
+
+%% Título e rótulo de capítulo (rótulos não devem conter caracteres especiais, acentuados ou cedilha)
+\chapter{Introdução}\label{cap:introducao}
+
+Os sistemas distribuídos desempenham um papel fundamental em nossa sociedade cada vez mais conectada, permitindo a troca de informações e o compartilhamento de recursos entre diferentes dispositivos e usuários. No entanto, a natureza distribuída desses sistemas apresentam desafios significativos, como manter a consistência dos dados em ambientes onde ocorrem falhas e partições de rede. Nesse contexto, o Teorema da \gls{cap} tem sido amplamente discutido e estudado como um importante princípio para projetar e entender sistemas distribuídos, visto que veio de encontro com os conceitos de ACID(Consistência) e BASE(Disponibilidade) \cite{ConsistencyInACIDAndCAPTheoremStackOverFlow2013}.
+
+Ao longo dos anos, diversos estudos têm explorado os desafios e soluções relacionados ao \gls{cap} em sistemas distribuídos como, por exemplo, no estudo \textit{CAP Twelve Years Later: How the ``Rules'' Have Changed} \cite{TwentyYearsLaterEricBrewer2012} do próprio criador do teorema mencionado, o qual é analisado alguns acontecimentos relacionado a má interpretação das ``regras''    do \gls{cap}. Pesquisadores têm analisado diferentes aspectos, como as propriedades dos sistemas que podem ser garantidas simultaneamente, a complexidade dos algoritmos de consistência, os trade-offs entre consistência e disponibilidade, e as estratégias para lidar com partições de rede. Várias abordagens têm sido propostas, como os modelos de consistência eventual \cite{EventuallyConsistentWernerVogels2009}, forte e fraca, além de técnicas de replicação de dados e algoritmos de consenso distribuído, como o algoritmo Paxos \cite{PaxosMadeSimpleLamport2001}.
+
+Apesar dos avanços significativos alcançados na área, há uma lacuna no estado-da-arte em relação à difusão e compreensão do \gls{cap} entre os novos pesquisadores. A complexidade inerente ao teorema e a falta de materiais didáticos e recursos de aprendizagem adequados podem dificultar a entrada de novos estudiosos nesse campo. Portanto, é necessário direcionar esforços para preencher essa lacuna e incentivar a pesquisa nessa área vital dos sistemas distribuídos.
+
+O objetivo deste trabalho é explicar a importância do \gls{cap} em sistemas distribuídos e fornecer uma revisão sistemática dos princípios relacionados a esse teorema. Busca-se enriquecer a compreensão dos desafios e soluções associados ao \gls{cap}, a fim de incentivar e capacitar novos pesquisadores a contribuírem nessa área de pesquisa. Ao final deste trabalho, espera-se que os leitores tenham adquirido conhecimento aprofundado sobre o \gls{cap}, seus conceitos fundamentais e as abordagens existentes para lidar com as suas implicações. Como objetivos específicos, ou sejam, subprodutos que contribuem para atingir o objetivo geral do artigo, temos:
+\begin{itemize}
+    \item Analisar e compreender os conceitos fundamentais do \gls{cap} em sistemas distribuídos, incluindo as propriedades de consistência, disponibilidade e tolerância a partições de rede.
+    \item Realizar uma revisão sistemática da literatura sobre o \gls{cap}, identificando as principais abordagens, modelos de consistência e algoritmos de replicação de dados utilizados na área.
+    \item Investigar os desafios e trade-offs associados à aplicação do \gls{cap} em diferentes cenários de sistemas distribuídos, considerando aspectos como escalabilidade, desempenho e resiliência a falhas.
+    \item Demonstrar, por meio de exemplos e estudos de caso, a importância e os benefícios
+de projetar sistemas distribuídos levando em consideração os princípios do \gls{cap}.
+Contribuir para a ampliação do conhecimento na área de sistemas distribuídos, oferecendo uma visão atualizada dos avanços recentes e das tendências futuras relacionadas ao \gls{cap}.
+\end{itemize}
+
+A metodologia adotada neste trabalho consiste em uma revisão bibliográfica da literatura sobre o \gls{cap} e seus princípios. Serão pesquisados principalmente por artigos científicos, porém  livros, conferências e recursos online também serão considerados como opções, selecionando-se aqueles que abordam diretamente o \gls{cap} e suas aplicações ou conceito incompreendidos em sistemas distribuídos. Visto que o foco está no uso de artigo, tem-se que serão pesquisados por eles nos pricipais repositórios disponíveis, no caso, o da ACM Digital Library, IEEE Xplore, Google Scholar e SpringerLink, onde espera-se ter pelo menos 30 artigos viáveis, todavía certas análises prévias quanto aos seus métodos e resultados será feita, de modo a afunilar para obter-se os 10 melhores candidatos. A partir da análise desses materiais, serão extraídos os principais resultados publicados na área, proporcionando uma visão abrangente e atualizada do estado-da-arte.
+
+Espera-se que este trabalho proporcionará uma visão abrangente dos principais resultados publicados no campo do \gls{cap} em sistemas distribuídos. Serão apresentados os diferentes modelos de consistência, as técnicas de replicação de dados mais utilizadas e os algoritmos de consenso.
+
+O trabalho identifica e aborda uma lacuna existente na compreensão e difusão do \gls{cap} entre novos pesquisadores. Ao fornecer uma introdução clara e acessível ao tema, busca incentivar o envolvimento e a pesquisa nesse campo. Além disso, o artigo realiza uma revisão sistemática da literatura sobre o \gls{cap}, fornecendo uma compilação abrangente dos principais resultados e abordagens na área. Isso oferece uma visão consolidada e atualizada do estado-da-arte.
