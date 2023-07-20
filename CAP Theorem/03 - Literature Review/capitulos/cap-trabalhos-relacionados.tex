@@ -1,0 +1,34 @@
+% ATENÇÃO - veja com o seu orientador se você vai ter este capítulo e se este vai ter nome!
+\chapter{Revisão da Bibliográfica}
+\label{cap:trabalhos:relacionados}
+Uma revisão bibliográfica é necessária, pois aqui serão apresentados os conceitos básicos e fundamentais para a visão geral da área de pesquisa e do problema, porém agora com uma fundamentação teórica do assunto. A subseção de trabalhos relacionados listará as propostas relevantes, as quais serão comparadas com o trabalho em questão.
+
+\section{Fundamentação teórica}
+
+O Teorema CAP foi criado por Eric Brewer, o qual é muito bem definido no artigo ``Brewer's CAP Theorem'' \cite{BrewerCAPTheoremSimonSalome} explica que ``The CAP theorem states: You can have at most two of these properties for any shared-data system'', ou seja, o autor descreveu que em um sistema distribuído, é impossível garantir simultaneamente consistência, disponibilidade e tolerância a partições de rede. Esses três atributos são muito bem definidos com profundida no artigo ``Perspectives on the CAP Theorem'' \cite{PerspectivesCAPTheoremGilbertLynch2012}.
+
+O primeiro termo da sigla \gls{cap}, denominado de ``consistência'', refere-se à uniformidade dos dados em um sistema distribuído. Um sistema é considerado consistente quando todas as réplicas dos dados em diferentes nós apresentam a mesma versão dos dados em um determinado momento.
+O segundo termo da sigla trata da `availability'', que em português significa ``disponibilidade'', o qual diz respeito à capacidade de um sistema de responder a solicitações, mesmo em face de falhas ou partições de rede. Um sistema é considerado disponível se os usuários podem acessar e obter respostas, mesmo que alguns nós ou conexões falhem. Por fim, a última letra referente ao teorema trata da ``partition tolerance'', que é dado como a tolerância a partições de rede, o qual concerne à capacidade de um sistema de continuar operando e garantir consistência e disponibilidade mesmo que ocorram falhas de comunicação entre nós.
+A compreensão desses conceitos é essencial para compreender os desafios e as soluções relacionados ao Teorema CAP em sistemas distribuídos.
+
+Tais definições estão muito bem explicadas nas literatura e são mencionadas em diversos estudos, como nos artigos ``Brewer's CAP Theorem'' \cite{BrewerCAPTheoremSimonSalome}, ou no blog post ``You Can’t Sacrifice Partition Tolerance'' \cite{YouCantSacrificePartitionToleranceCodaHale2010}, sendo que o autor cita o autores Seth Gilbert e Nancy Lynch do artigo ``Perspectives on the CAP Theorem''.
+
+\section{Trabalhos Relacionados}
+Note: Comparar todos com o meu trabalho!
+
+\begin{itemize}
+    \item "Perspectives on the CAP Theorem" \cite{PerspectivesCAPTheoremGilbertLynch2012}: Este trabalho oferece uma análise abrangente das diferentes perspectivas e interpretações do Teorema CAP. Ele explora as implicações teóricas e práticas do Teorema e discute as compensações necessárias para contextos onde prioriza-se consistência ou disponibilidade em sistemas distribuídos, além disso inclui um capítulo relevante onde ele demonstra como atingir tanto consistência quanto disponibilidade, por meio da segmentação de dados, usuário, operações, entre outros. Além disso, os autores deste artigo são os responsáveis pela prova formal do \gls{cap} no artigo ``Brewer's Conjecture and the Feasibility of Consistent Available Partition-Tolerant Web Services'' \cite{Brewer'sConjectureAndTheFeasibilityOfConsistentAvailablePartition-TolerantWebServicesGilbertLynch2002}.
+    \item "You Can't Sacrifice Partition Tolerance" \cite{YouCantSacrificePartitionToleranceCodaHale2010}: Este blog post enfatiza a importância da tolerância a partições de rede no contexto do Teorema CAP. Ele argumenta que a tolerância a partições é um requisito fundamental para sistemas distribuídos resilientes e explora as implicações dessa escolha como, por exemplo, em sistemas reais, é impossível atender a trilhões de requisições simultâneas tendo um arquitetura centralizada, ou seja, que não seja particionada na rede (argumento também exposto em ``Eventually Consistent'' \cite{EventuallyConsistentWernerVogels2009}. Além disso, o próprio autor do teorema CAP usou este blog post como motivação para escrever o artigo abaixo, devido ao fato do \gls{cap} ter apresentado várias interpretações errôneas.
+    \item "Brewer's CAP Theorem" \cite{BrewerCAPTheoremSimonSalome}: Neste trabalho, o autor apresenta o Teorema CAP, mencionando as três propriedades (consistência, disponibilidade e tolerância a partições) definidas por outros autores e sua relação mútua. O artigo oferece uma visão geral do Teorema e suas implicações práticas, além de mencionar a formulação feita pelo Eric Brewer no artigo ``CAP Twelve Years Later - How the 'Rules' Have Changed'' de que a decisão não é binária. Por fim, o autor também menciona \cite{Brewer'sConjectureAndTheFeasibilityOfConsistentAvailablePartition-TolerantWebServicesGilbertLynch2002}, junto com exemplos de aplicações reais, como o Amazon Dynamo, do teorema em questão. 
+    \item "CAP Twelve Years Later - How the 'Rules' Have Changed" \cite{TwentyYearsLaterEricBrewer2012}: Esse trabalho revisita o Teorema CAP após doze anos de sua formulação inicial. Ele discute como as interpretações erroneas do Teorema evoluíram e como as tecnologias e práticas de sistemas distribuídos se adaptaram ao longo do tempo. 
+    
+\end{itemize}
+Em comparação com esses trabalhos relacionados, o artigo proposto "Teorema CAP em Sistemas Distribuídos: Uma Revisão Sistemática dos Princípios" busca preencher a lacuna existente na compreensão e difusão do Teorema CAP, oferecendo uma revisão sistemática da literatura sobre o tema. Ele se concentra em fornecer uma visão geral abrangente, identificar lacunas na pesquisa e apresentar recomendações práticas para a aplicação do Teorema CAP em sistemas distribuídos.
+
+Uma lacuna que nenhum dos trabalhos acima preenche, no qual este trabalho pretende resolver, é também englobar a questão do porque a maioria dos sistemas se encontram no campo AP, ou seja, focados em ter disponibilidade e tolerância a partição. Além disso, também considero uma lacuna a ser preenchida, de modo a dar mais completude para o artigo, explica também porque a decisão não é binária e o motivo de ser inviável fugir da partição de rede. Dessa forma, o leitor tendo um artigo mais completo sobre o tema, o qual define tantos os termos, quantos as limitações e as práticas 
+
+Essa revisão da literatura permite contextualizar o trabalho em relação aos conhecimentos existentes, destacando sua contribuição específica para o campo do Teorema CAP em sistemas distribuídos.
+
+
+%---------------------------------------------------%
+
