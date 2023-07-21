@@ -16,8 +16,11 @@ My Work Proposal for the Research Methodology Subject that i did my university c
 
 <div align="center">
 
+![GitHub Code Size in Bytes](https://img.shields.io/github/languages/code-size/BrenoFariasdaSilva/Research-Methodology)
+![GitHub Last Commit](https://img.shields.io/github/last-commit/BrenoFariasdaSilva/Research-Methodology)
+![GitHub](https://img.shields.io/github/license/BrenoFariasdaSilva/Research-Methodology)
 ![wakatime](https://wakatime.com/badge/github/BrenoFariasdaSilva/Research-Methodology.svg)
-  
+
 </div>
 
 <div align="center">
