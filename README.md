@@ -28,3 +28,6 @@ My Work Proposal for the Research Methodology Subject that i did my university c
 ![RepoBeats Statistics](https://repobeats.axiom.co/api/embed/1a121081a586a21625ff4e058ff4edf59269e1a9.svg "Repobeats analytics image")
 
 </div>
+
+## License
+This project is licensed under the [Creative Commons Zero v1.0 Universal](LICENSE), which means you are free to use, modify, and distribute the code. See the [LICENSE](LICENSE) file for more details.
